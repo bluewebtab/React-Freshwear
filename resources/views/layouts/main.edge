@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    @!section('title')
+  </title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="/">
+        FreshWear
+      </a>
+    </div>
+    <div class="menu">
+      <a href="/about">About</a>
+      <a href="/products/new-arrivals">New Arrival</a>
+      <a href="/products">All Products</a>
+      <div href="#" id="CartBtnRoot">Cart<div>4</div></div>
+
+    </div>
+  </header>
+  {{--  <section class="content-area home-page">
+  
+  </section>  --}}
+  @!section('content')
+  
+  <div id="CartPopupRoot"></div>
+  
+
+  <script src="/js/dist/vendors.js"></script>
+  @!section('javascript')
+  <script src="/js/dist/CartComponents.js"></script>
+
+
+</body>
+</html>

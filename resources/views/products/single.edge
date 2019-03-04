@@ -1,0 +1,65 @@
+@layout('layouts/main')
+
+@section('title')
+Freshwear | Top Shoes
+@endsection
+@section('content')
+<section class="content-area product-single-page">
+  <div class="product-imgs">
+    <div class="product">
+      <div class="circle">
+        <img src="/img/products/adidas-ultraboost-gray.png">
+
+      </div>
+    </div>
+  </div>
+  <div class="product-detail">
+    <div class="single-title">
+        <div class="brand">
+        Adidas
+        </div>
+        <div class="product">
+            Yeezy Ultra Boost
+        </div>
+    </div>
+    <div class="details">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div id="ProductAddToCartRoot"></div>
+
+      <div class="detail-section">
+        <div class="detail">
+            <input type="checkbox" id="delivery-dropdown" class="toggle"  />
+            <label class="title" for="delivery-dropdown">Delivery</label>
+            <div class="content">
+              <p class="">
+                The speeds that show are dependent on those made available by the seller.
+                Standard - Should arrive 3 to 10 business days.
+                Expedited - Should arrive 3 to 6 business days.
+                Second Day - Should arrive in 2 business days.
+                Next Day - Should arrive by the end of business day.
+              </p>
+            </div>
+        </div>
+      </div>
+      <div class="detail-section">
+          <div class="detail">
+              <input type="checkbox" id="refund-dropdown" class="toggle"  />
+              <label class="title" for="refund-dropdown">Refund</label>
+              <div class="content">
+                <p class="">
+                  We accept returns for store credit, within 3 business days of receipt. Items must be tagged and in new/unworn condition.
+                </p>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+@endsection
+
+@section('javascript')
+<script src="/js/dist/ProductAddToCart.js"></script>
+
+@endsection
+
+  
