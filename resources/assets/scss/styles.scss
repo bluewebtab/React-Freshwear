@@ -345,4 +345,33 @@ input[type="password"], input[type="email"]{
   border: 1px solid #6c6c6c;
 }
 
-
+#alert-box{
+  display:none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  padding: 20px;
+  width: 100%;
+  cursor: pointer;
+  &.active{
+    display:block;
+  }
+  .title{
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  &.notification{
+    background:yellow;
+    color:black;
+  }
+  &.success{
+    background: green;
+    color:white;
+  }
+  &.error{
+    background: red;
+    color:white;
+  }
+}

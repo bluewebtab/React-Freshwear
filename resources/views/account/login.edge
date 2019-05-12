@@ -13,10 +13,23 @@ Freshwear | Login
                 {{csrfField()}}
                   <input 
                   type="email" 
-                  name="email" placeholder="Email"/>  
+                  name="email" placeholder="Email" value="{{old('email', '')}}" class="@if(hasErrorFor('email'))
+                    error
+                  @endif
+                  "/>  
+                  @if(hasErrorFor('email'))
+                    <div class="error-message">{{getErrorFor('email')}}</div>
+                  @endif
                   <input 
                   type="password" 
-                  name="password" placeholder="Password"/>  
+                  name="password" placeholder="Password" value="{{old('password', '')}}" class="@if(hasErrorFor('password'))
+                    error
+                  @endif
+                  "/>  
+
+                  @if(hasErrorFor('password'))
+                    <div class="error-message">{{getErrorFor('email')}}</div>
+                  @endif
 
                   <a href="/account/forgot-password">Forgot Password</a>
 
