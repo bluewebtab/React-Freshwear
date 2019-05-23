@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /*
 |--------------------------------------------------------------------------
@@ -14,42 +14,52 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
-const Route = use('Route')
+const Route = use('Route');
 
+Route.get('/', 'PageController.home');
 
+Route.get('/about', 'PageController.about');
 
-Route.get('/', 'PageController.home')
+//Admin
+Route.get('/admin', 'Admin/AdminController.index');
+//Admin/Products/Types
+Route.get('/admin/products/types', 'Admin/Products/TypeController.index');
+Route.post('/admin/products/types', 'Admin/Products/TypeController.store');
 
-
-Route.get('/about', 'PageController.about')
-
+Route.get(
+	'/admin/products/types/create',
+	'Admin/Products/TypeController.create'
+);
+Route.put('/admin/products/types/:id', 'Admin/Products/TypeController.update');
+Route.get(
+	'/admin/products/types/:id/edit',
+	'Admin/Products/TypeController.edit'
+);
+Route.get(
+	'/admin/products/types/:id/delete',
+	'Admin/Products/TypeController.delete'
+);
 
 //Products
-Route.get('/products', 'ProductController.index')
+Route.get('/products', 'ProductController.index');
 
-Route.get('/:brand/:subcategory/:slug', 'ProductController.show')
+Route.get('/:brand/:subcategory/:slug', 'ProductController.show');
 
-
-Route.get('/products/new-arrivals', 'ProductController.newArrivals')
-.middleware(
-    'auth'
+Route.get('/products/new-arrivals', 'ProductController.newArrivals').middleware(
+	'auth'
 );
 
 //Cart
 Route.get('/cart/checkout', 'CartController.checkout');
 
-
 //Account
 
-Route.get('/account', 'UserController.index')
-Route.get('/account/change-password', 'UserController.changePassword')
-Route.get('/account/orders', 'UserController.orders')
+Route.get('/account', 'UserController.index');
+Route.get('/account/change-password', 'UserController.changePassword');
+Route.get('/account/orders', 'UserController.orders');
 
-Route.get('/register', 'AuthController.register')
-Route.post('/register', 'AuthController.storeUser')
-Route.get('/login', 'AuthController.login')
-Route.post('/login', 'AuthController.handleLogin')
-Route.get('/logout', 'AuthController.logout')
-
-
-
+Route.get('/register', 'AuthController.register');
+Route.post('/register', 'AuthController.storeUser');
+Route.get('/login', 'AuthController.login');
+Route.post('/login', 'AuthController.handleLogin');
+Route.get('/logout', 'AuthController.logout');
